@@ -1,0 +1,88 @@
+session topic :
+1) basic of rails
+2) basic pattern for rails
+4) whats new rails 5
+
+links :-
+
+https://www.sitepoint.com/whats-new-rails-5/
+http://metaruby.com/
+https://ruby5.codeschool.com/
+https://www.reddit.com/r/ruby/
+http://www.rubyflow.com/
+http://rubyweekly.com/
+
+
+
+
+Yoo....
+
+devise_auth..
+
+Question in my mind :
+ 1) why callback methods as protected
+ 2) what is that tight coupling affects the object’s database lifecycle
+ 3) Single Responsibility Principle
+ 4) God Object rails example
+ 5) non-ActiveRecord abstractions example
+ 6) MODEL CONCERNS structure
+ 7) orchestration
+ 8) Active Record pattern
+ 9) CONCERNS VS ACTIVESUPPORT::CONCERN
+ 10) tight coupling vs loose
+ 11) decorator vs helper
+ 12) Sidekiq for worker
+
+
+
+
+
+---------------------------
+1) Ok so here we are taking about rails pattern but before that why we are using rails with pattern or what is that means.
+2) we all know that rails follow two mechanism 1) convention above configuration and 2) dry code (Don't Repeat Yourself)
+we all know about that the second one is the mother of session topic. 
+3) one quesion arried in our mind that why we are use dry code if we have MVC pattern which is already help to divide code. but it is not fully fulfil our complete requirement.
+4) Dry code helps us and our client to less maintainance time and code changes should free from side effect as possible.
+5) I think you are now getting that term dry(Don't Repeat Yourself) code.
+6) so rails pattern help as to acheive that second mechanism. so here is structure of rails which is we follow to started new part. I am not going for all of the structure but focusing on app section which is related to rails pattern.
+	like 
+	your_application_name
+		app
+			assets
+				font
+				images
+				javascripts
+				stylesheets
+			controllers
+				concern
+			helpers
+			mailers
+			models
+				concern
+				decorators
+				email -- non active record model class
+				search -- non active record model class
+
+			serializers -- it is for return selected data to controller
+			services - example create for notification add like added activity
+			views
+				_partial
+			workers - ActivityWorker to run in background
+		lib
+so we will go one by one to understand why we are using it and divided code into above structure. 
+
+start with controller dry code
+ 
+ what point we coverd into it : 
+
+ FAT CONTROLLERS/ Model ARE BAD
+ Non ActiveRecord Models: they are classes which encapsulate unique
+						  business logic out of your ActiveRecord models.
+ Concern on controller and model
+ decorator
+ serializers
+ services
+ workers
+ lib
+
+
